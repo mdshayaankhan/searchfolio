@@ -1,6 +1,10 @@
 import { cn } from '@/lib/utils';
 
-const Logo = () => {
+interface LogoProps {
+  small?: boolean;
+}
+
+const Logo = ({ small }: LogoProps) => {
   const colors = [
     'text-blue-500',
     'text-red-500',
@@ -12,21 +16,22 @@ const Logo = () => {
     'text-blue-500',
   ];
 
-  const name = 'Welcome!';
+  const name = small ? 'Searchfolio' : 'Welcome!';
+  const sizeClass = small 
+    ? 'text-2xl font-sans font-medium tracking-tighter' 
+    : 'select-none text-7xl font-sans font-normal tracking-tighter sm:text-8xl md:text-9xl';
 
   return (
     <h1
-      className={cn(
-        'select-none text-7xl font-sans font-normal tracking-tighter sm:text-8xl md:text-9xl'
-      )}
+      className={cn(sizeClass)}
       aria-label={name}
     >
       {name.split('').map((char, index) => (
         <span
           key={index}
           className={cn(
-            'dark:text-primary-foreground/90',
-            colors[index % colors.length]
+            small ? 'dark:text-primary-foreground/90' : 'dark:text-primary-foreground/90',
+            !small && colors[index % colors.length]
           )}
         >
           {char}
@@ -37,5 +42,3 @@ const Logo = () => {
 };
 
 export default Logo;
-
-    
