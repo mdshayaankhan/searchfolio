@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, type FormEvent } from 'react';
-import { Search, Moon, Sun, ArrowLeft } from 'lucide-react';
+import { Search, Moon, Sun, ArrowLeft, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -15,7 +15,6 @@ import HelpSection from '@/components/sections/Help';
 import NotFoundSection from '@/components/sections/NotFound';
 import EasterEggSection from '@/components/sections/EasterEgg';
 import SearchResults from '@/components/sections/SearchResults';
-import ColoredMicIcon from '@/components/ColoredMicIcon';
 
 type Section =
   | 'about'
@@ -139,7 +138,6 @@ export default function Home() {
   };
 
   const handlePortfolioSearch = () => {
-    setSearchTerm('');
     setActiveSection(null);
     setShowResults(true);
   }
@@ -326,7 +324,7 @@ export default function Home() {
                       <Search className="h-5 w-5 text-muted-foreground" />
                     </div>
                     <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
-                      <ColoredMicIcon />
+                      <Mic className="h-5 w-5 text-muted-foreground" />
                     </button>
                   </div>
 
