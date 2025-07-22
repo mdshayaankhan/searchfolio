@@ -9,31 +9,31 @@ const skills = {
     { 
       category: 'Programming Languages', 
       items: [
-        { name: 'Python', icon: 'https://placehold.co/48x48.png', hint: 'python logo' },
-        { name: 'Java', icon: 'https://placehold.co/48x48.png', hint: 'java logo' },
+        { name: 'Python', icon: 'https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png', hint: 'python logo' },
+        { name: 'Java', icon: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png', hint: 'java logo' },
       ]
     },
     {
       category: 'Database System',
       items: [
-        { name: 'MySQL', icon: 'https://placehold.co/48x48.png', hint: 'mysql logo' },
-        { name: 'MongoDB', icon: 'https://placehold.co/48x48.png', hint: 'mongodb logo' },
+        { name: 'MySQL', icon: 'https://cdn.freebiesupply.com/logos/large/2x/mysql-5-logo-png-transparent.png', hint: 'mysql logo' },
+        { name: 'MongoDB', icon: 'https://images.icon-icons.com/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png', hint: 'mongodb logo' },
       ]
     },
      {
       category: 'Web Development',
       items: [
-        { name: 'HTML', icon: 'https://placehold.co/48x48.png', hint: 'html5 logo' },
-        { name: 'CSS', icon: 'https://placehold.co/48x48.png', hint: 'css3 logo' },
+        { name: 'HTML', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png', hint: 'html5 logo' },
+        { name: 'CSS', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png', hint: 'css3 logo' },
         { name: 'MERN Stack', icon: <Code className="w-8 h-8 text-primary" /> },
-        { name: 'JavaScript', icon: 'https://placehold.co/48x48.png', hint: 'javascript logo' },
+        { name: 'JavaScript', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png', hint: 'javascript logo' },
       ]
     },
     {
       category: 'Operating System',
       items: [
-        { name: 'Windows', icon: 'https://placehold.co/48x48.png', hint: 'windows logo' },
-        { name: 'Linux', icon: 'https://placehold.co/48x48.png', hint: 'linux logo' },
+        { name: 'Windows', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Unofficial_Windows_logo_variant_-_2002%E2%80%932012_%28Multicolored%29.svg/2321px-Unofficial_Windows_logo_variant_-_2002%E2%80%932012_%28Multicolored%29.svg.png', hint: 'windows logo' },
+        { name: 'Linux', icon: 'https://seeklogo.com/images/L/linux-logo-5487A51CBA-seeklogo.com.png', hint: 'linux logo' },
       ]
     }
   ],
