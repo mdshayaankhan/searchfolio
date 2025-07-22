@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, Download, Briefcase, GraduationCap, Award, Star, Brush, User, Phone, Mail, Linkedin, Code, Database, Server, Component, Cpu, ShieldCheck, CircuitBoard, BrainCircuit, Bot, Handshake, Users, MessageSquare, Mic, Lightbulb, Projector } from 'lucide-react';
+import { FileText, Download, Briefcase, GraduationCap, Award, Star, Brush, User, Phone, Mail, Linkedin, Code, Database, Server, Component, Cpu, ShieldCheck, CircuitBoard, BrainCircuit, Bot, Handshake, Users, MessageSquare, Mic, Lightbulb, Projector, Globe, Camera } from 'lucide-react';
 import { Separator } from '../ui/separator';
 import Image from 'next/image';
 
@@ -9,68 +9,49 @@ const skills = {
     { 
       category: 'Programming Languages', 
       items: [
-        { name: 'C++', icon: 'https://placehold.co/48x48.png', hint: 'c++ logo' },
         { name: 'Python', icon: 'https://placehold.co/48x48.png', hint: 'python logo' },
         { name: 'Java', icon: 'https://placehold.co/48x48.png', hint: 'java logo' },
-        { name: 'SQL', icon: 'https://placehold.co/48x48.png', hint: 'sql logo' },
-        { name: 'JavaScript', icon: 'https://placehold.co/48x48.png', hint: 'javascript logo' },
       ]
     },
     {
+      category: 'Database System',
+      items: [
+        { name: 'MySQL', icon: 'https://placehold.co/48x48.png', hint: 'mysql logo' },
+        { name: 'MongoDB', icon: 'https://placehold.co/48x48.png', hint: 'mongodb logo' },
+      ]
+    },
+     {
       category: 'Web Development',
       items: [
         { name: 'HTML', icon: 'https://placehold.co/48x48.png', hint: 'html5 logo' },
         { name: 'CSS', icon: 'https://placehold.co/48x48.png', hint: 'css3 logo' },
-        { name: 'Firebase', icon: 'https://placehold.co/48x48.png', hint: 'firebase logo' },
-        { name: 'Node.js', icon: 'https://placehold.co/48x48.png', hint: 'nodejs logo' },
-        { name: 'React', icon: 'https://placehold.co/48x48.png', hint: 'react logo' },
+        { name: 'MERN Stack', icon: <Code className="w-8 h-8 text-primary" /> },
+        { name: 'JavaScript', icon: 'https://placehold.co/48x48.png', hint: 'javascript logo' },
       ]
     },
     {
-      category: 'Machine Learning and Data Science',
+      category: 'Operating System',
       items: [
-        { name: 'Model Development', icon: <BrainCircuit className="w-8 h-8 text-primary" /> },
-        { name: 'Data Analysis', icon: <Database className="w-8 h-8 text-primary" /> },
-        { name: 'Data Visualization', icon: <Bot className="w-8 h-8 text-primary" /> },
-      ]
-    },
-    {
-      category: 'Cryptography',
-      items: [
-        { name: 'Encryption', icon: <ShieldCheck className="w-8 h-8 text-primary" /> },
-        { name: 'Network Security', icon: <Server className="w-8 h-8 text-primary" /> },
-        { name: 'Discrete Mathematics', icon: <Component className="w-8 h-8 text-primary" /> },
-        { name: 'Block Chain', icon: <Cpu className="w-8 h-8 text-primary" /> },
-      ]
-    },
-    {
-      category: 'Operating Systems',
-      items: [
-        { name: 'Linux', icon: 'https://placehold.co/48x48.png', hint: 'linux logo' },
         { name: 'Windows', icon: 'https://placehold.co/48x48.png', hint: 'windows logo' },
-        { name: 'Ubuntu', icon: 'https://placehold.co/48x48.png', hint: 'ubuntu logo' },
-        { name: 'macOS', icon: 'https://placehold.co/48x48.png', hint: 'apple logo' },
-      ]
-    },
-    {
-      category: 'IoT (Internet of Things)',
-      items: [
-        { name: 'Arduino', icon: 'https://placehold.co/48x48.png', hint: 'arduino logo' },
-        { name: 'ESP', icon: 'https://placehold.co/48x48.png', hint: 'esp32 logo' },
-        { name: 'PCB designs', icon: <CircuitBoard className="w-8 h-8 text-primary" /> },
-        { name: 'Sensors', icon: <Component className="w-8 h-8 text-primary" /> },
+        { name: 'Linux', icon: 'https://placehold.co/48x48.png', hint: 'linux logo' },
       ]
     }
   ],
   soft: [
+    { name: 'Communication Skills', icon: <MessageSquare className="w-8 h-8 text-primary" /> },
     { name: 'Leadership', icon: <Handshake className="w-8 h-8 text-primary" /> },
     { name: 'Teamwork', icon: <Users className="w-8 h-8 text-primary" /> },
-    { name: 'Communication', icon: <MessageSquare className="w-8 h-8 text-primary" /> },
-    { name: 'Public Speaking', icon: <Mic className="w-8 h-8 text-primary" /> },
     { name: 'Problem-Solving', icon: <Lightbulb className="w-8 h-8 text-primary" /> },
-    { name: 'Project Management', icon: <Projector className="w-8 h-8 text-primary" /> },
+    { name: 'Adaptability', icon: <Users className="w-8 h-8 text-primary" /> },
   ]
 };
+
+const hobbies = [
+    { name: 'Traveling', icon: <Globe className="w-8 h-8 text-primary" /> },
+    { name: 'Volunteering', icon: <Handshake className="w-8 h-8 text-primary" /> },
+    { name: 'Sports', icon: <Star className="w-8 h-8 text-primary" /> },
+    { name: 'Photography', icon: <Camera className="w-8 h-8 text-primary" /> },
+];
 
 const ResumeSection = () => {
   return (
@@ -81,7 +62,9 @@ const ResumeSection = () => {
             <div className="flex items-center flex-wrap justify-center gap-4 mt-2 text-muted-foreground">
                 <div className='flex items-center gap-2'><Phone className="w-4 h-4" /> +91 – 9059701978</div>
                 <div className='flex items-center gap-2'><Mail className="w-4 h-4" /> khanshayaanmd@gmail.com</div>
-                <div className='flex items-center gap-2'><Linkedin className="w-4 h-4" /> www.linkedin.com/in/mdshayaankhan</div>
+                <a href="https://www.linkedin.com/in/mdshayaankhan" target="_blank" rel="noopener noreferrer" className='flex items-center gap-2 text-muted-foreground hover:text-primary'>
+                  <Linkedin className="w-4 h-4" /> www.linkedin.com/in/mdshayaankhan
+                </a>
             </div>
         </div>
       </CardHeader>
@@ -127,14 +110,14 @@ const ResumeSection = () => {
         <Separator />
         
         <div>
-            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Star className="w-6 h-6 text-primary" /> A. Technical Skills</h2>
+            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Star className="w-6 h-6 text-primary" /> Technical Skills</h2>
             <div className="space-y-6">
                 {skills.technical.map(skillCategory => (
                     <div key={skillCategory.category}>
                         <h3 className="font-semibold text-lg mb-3">i. {skillCategory.category}</h3>
                         <div className="flex flex-wrap gap-x-8 gap-y-4">
                             {skillCategory.items.map(item => (
-                                <div key={item.name} className="flex flex-col items-center gap-2 w-20 text-center">
+                                <div key={item.name} className="flex flex-col items-center gap-2 w-24 text-center">
                                     {typeof item.icon === 'string' ? (
                                         <Image src={item.icon} alt={item.name} width={48} height={48} data-ai-hint={item.hint} className="w-12 h-12 object-contain"/>
                                     ) : (
@@ -144,15 +127,6 @@ const ResumeSection = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                ))}
-            </div>
-            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4 mt-8"><Star className="w-6 h-6 text-primary" /> B. Soft Skills</h2>
-             <div className="flex flex-wrap gap-x-8 gap-y-4">
-                {skills.soft.map(item => (
-                    <div key={item.name} className="flex flex-col items-center gap-2 w-24 text-center">
-                        {item.icon}
-                        <span className="text-sm">{item.name}</span>
                     </div>
                 ))}
             </div>
@@ -206,17 +180,27 @@ const ResumeSection = () => {
 
         <div>
             <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Award className="w-6 h-6 text-primary" /> Certification & Achievements</h2>
-            <ul className="list-disc list-inside space-y-2 text-foreground/80">
-              <li>Fundamentals of Java Programming</li>
-              <li>Introduction to Relational Database and SQL</li>
-              <li>Power BI driven exhaustive analysis of Indian Agricultural Sector - AICTE Internship</li>
-              <li>EDUNET FOUNDATION |SKILLSBUILD PROGRAM | ARTIFICIAL INTELLIGENCE- AICTE Internship</li>
-              <li>BEST STARTUP concept at the university level -Technical Event</li>
-              <li><strong>Academic:</strong> Achieved consistent excellence in academics.</li>
-              <li><strong>Co-curricular:</strong> Acknowledged for achievements in sports, particularly cricket.</li>
-              <li><strong>Extracurricular:</strong> Actively participated in hackathons, coding challenges, and English language competitions.</li>
-              <li>Recognized for presenting the best startup concept at the university level, showcasing innovation and entrepreneurial skills.</li>
-            </ul>
+            <div className="space-y-2">
+                <div>
+                    <h3 className="font-semibold text-lg mb-2">Certifications</h3>
+                    <ul className="list-disc list-inside space-y-2 text-foreground/80">
+                        <li>Fundamentals of Java Programming</li>
+                        <li>Introduction to Relational Database and SQL</li>
+                        <li>Power BI driven exhaustive analysis of Indian Agricultural Sector - AICTE Internship</li>
+                        <li>EDUNET FOUNDATION |SKILLSBUILD PROGRAM | ARTIFICIAL INTELLIGENCE- AICTE Internship</li>
+                        <li>BEST STARTUP concept at the university level -Technical Event</li>
+                    </ul>
+                </div>
+                <div className="mt-4">
+                     <h3 className="font-semibold text-lg mb-2">Achievements</h3>
+                     <ul className="list-disc list-inside space-y-2 text-foreground/80">
+                        <li><strong>Academic:</strong> Achieved consistent excellence in academics.</li>
+                        <li><strong>Co-curricular:</strong> Acknowledged for achievements in sports, particularly cricket.</li>
+                        <li><strong>Extracurricular:</strong> Actively participated in hackathons, coding challenges, and English language competitions.</li>
+                        <li>Recognized for presenting the best startup concept at the university level, showcasing innovation and entrepreneurial skills.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
         <Separator />
@@ -224,22 +208,25 @@ const ResumeSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
                 <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Star className="w-6 h-6 text-primary" /> Strengths</h2>
-                 <ul className="list-disc list-inside space-y-2 text-foreground/80">
-                    <li>Communication Skills</li>
-                    <li>Leadership</li>
-                    <li>Teamwork</li>
-                    <li>Problem-Solving</li>
-                    <li>Adaptability</li>
-                </ul>
+                 <div className="flex flex-wrap gap-x-8 gap-y-4">
+                    {skills.soft.map(item => (
+                        <div key={item.name} className="flex flex-col items-center gap-2 w-24 text-center">
+                            {item.icon}
+                            <span className="text-sm">{item.name}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
             <div>
                 <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Brush className="w-6 h-6 text-primary" /> Hobbies</h2>
-                 <ul className="list-disc list-inside space-y-2 text-foreground/80">
-                    <li>Traveling</li>
-                    <li>Volunteering</li>
-                    <li>Sports</li>
-                    <li>Photography</li>
-                </ul>
+                 <div className="flex flex-wrap gap-x-8 gap-y-4">
+                    {hobbies.map(item => (
+                        <div key={item.name} className="flex flex-col items-center gap-2 w-24 text-center">
+                            {item.icon}
+                            <span className="text-sm">{item.name}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
         
