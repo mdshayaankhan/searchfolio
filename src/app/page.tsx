@@ -15,6 +15,7 @@ import HelpSection from '@/components/sections/Help';
 import NotFoundSection from '@/components/sections/NotFound';
 import EasterEggSection from '@/components/sections/EasterEgg';
 import SearchResults from '@/components/sections/SearchResults';
+import { ColorfulMicIcon } from '@/components/icons/ColorfulMicIcon';
 
 type Section =
   | 'about'
@@ -371,7 +372,7 @@ export default function Home() {
         </motion.div>
 
         {showResults && (
-          <div className="mt-8 w-full max-w-4xl flex-grow">
+          <div className="mt-8 w-full max-w-7xl flex-grow">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSection || 'search-results'}
