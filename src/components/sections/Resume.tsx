@@ -33,7 +33,7 @@ const skills = {
       category: 'Operating System',
       items: [
         { name: 'Windows', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Unofficial_Windows_logo_variant_-_2002%E2%80%932012_%28Multicolored%29.svg/2321px-Unofficial_Windows_logo_variant_-_2002%E2%80%932012_%28Multicolored%29.svg.png', hint: 'windows logo' },
-        { name: 'Linux', icon: 'https://seeklogo.com/images/L/linux-logo-5487A51CBA-seeklogo.com.png', hint: 'linux logo' },
+        { name: 'Linux', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Linux_Logo_in_Linux_Libertine_Font.svg/1200px-Linux_Logo_in_Linux_Libertine_Font.svg.png', hint: 'linux logo' },
       ]
     }
   ],
