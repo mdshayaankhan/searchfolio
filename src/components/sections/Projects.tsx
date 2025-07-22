@@ -5,28 +5,44 @@ import { Code, ExternalLink, Briefcase } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Employee Burnout Analysis',
-    description: 'Developed a predictive model using linear regression to analyse factors contributing to employee burnout. Conducted exploratory data analysis, data cleaning, and feature engineering.',
+    title: 'Secure Client-Server Communication using SSL and Hybrid RSA-AES',
     image: 'https://placehold.co/600x400.png',
-    liveUrl: 'https://github.com/mdshayaankhan/Employee-Burnout-Analysis',
-    githubUrl: 'https://github.com/mdshayaankhan/Employee-Burnout-Analysis',
-    hint: 'data analysis'
+    hint: 'server security',
   },
   {
-    title: 'Power BI Driven Analysis of Indian Agriculture',
-    description: 'Created interactive dashboards to analyse 19 years of agricultural data across crops, seasons, and regions. Provided actionable insights for policymakers.',
+    title: 'College Management System Application -AUMS',
     image: 'https://placehold.co/600x400.png',
-    liveUrl: 'https://github.com/mdshayaankhan/Agricultural-Analysis',
-    githubUrl: 'https://github.com/mdshayaankhan/Agricultural-Analysis',
-    hint: 'power bi dashboard'
+    hint: 'college management',
   },
   {
-    title: 'Pet Adoption Web Application',
-    description: 'Developed a MERN stack web app to connect rescue pets with adopters, featuring a secure user interface and real-time updates.',
+    title: 'Road safety and Accident Prevention Using RF in Speed Limit Zones',
     image: 'https://placehold.co/600x400.png',
-    liveUrl: 'https://github.com/mdshayaankhan/PetAdoption',
-    githubUrl: 'https://github.com/mdshayaankhan/PetAdoption',
-    hint: 'web application'
+    hint: 'road safety',
+  },
+  {
+    title: 'Addressing Rising Crimes Against Women In India Through Data Analysis',
+    image: 'https://placehold.co/600x400.png',
+    hint: 'data analysis chart',
+  },
+  {
+    title: 'IoT-Enabled Pharmaceutical Inventory Management System',
+    image: 'https://placehold.co/600x400.png',
+    hint: 'pharmaceutical inventory',
+  },
+  {
+    title: 'Genetic Algorithm for Intelligent Vehicle Routing in Logistics',
+    image: 'https://placehold.co/600x400.png',
+    hint: 'vehicle routing logistics',
+  },
+  {
+    title: 'Securing Digital Images using Affine Hill Cipher and Transform Method',
+    image: 'https://placehold.co/600x400.png',
+    hint: 'digital image security',
+  },
+  {
+    title: 'All in Once: Your One-Stop Online Shop E-Commerce website',
+    image: 'https://placehold.co/600x400.png',
+    hint: 'ecommerce website',
   },
 ];
 
@@ -37,35 +53,25 @@ const ProjectsSection = () => {
         <Briefcase className="w-8 h-8 text-primary" />
         <h2 className="text-2xl font-headline">My Projects</h2>
       </header>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <p className="mb-6 text-foreground/80">
+        I have worked on projects in various domains including optimization, cybersecurity, IoT, machine learning, and web development. These experiences have equipped me with a diverse skill set, allowing me to tackle complex problems and develop innovative solutions across different fields.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((project) => (
-          <Card key={project.title} className="overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 duration-300">
-             <CardHeader>
+          <Card key={project.title} className="overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 duration-300 flex flex-col">
+             <CardHeader className='p-0'>
                <Image
                 src={project.image}
                 alt={project.title}
                 width={600}
                 height={400}
-                className="rounded-t-lg object-cover w-full aspect-video"
+                className="rounded-t-lg object-cover w-full aspect-[4/3]"
                 data-ai-hint={project.hint}
               />
             </CardHeader>
-            <CardContent>
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription className="mt-2">{project.description}</CardDescription>
+            <CardContent className="p-4 flex-grow">
+              <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
             </CardContent>
-            <CardFooter className="flex justify-end gap-2">
-              <Button variant="ghost" asChild>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Code className="mr-2 h-4 w-4" /> Source
-                </a>
-              </Button>
-              <Button asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                </a>
-              </Button>
-            </CardFooter>
           </Card>
         ))}
       </div>

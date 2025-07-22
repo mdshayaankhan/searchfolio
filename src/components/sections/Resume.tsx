@@ -1,7 +1,76 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, Download, Briefcase, GraduationCap, Award, Star, Brush, User, Phone, Mail, Linkedin } from 'lucide-react';
+import { FileText, Download, Briefcase, GraduationCap, Award, Star, Brush, User, Phone, Mail, Linkedin, Code, Database, Server, Component, Cpu, ShieldCheck, CircuitBoard, BrainCircuit, Bot, Handshake, Users, MessageSquare, Mic, Lightbulb, Projector } from 'lucide-react';
 import { Separator } from '../ui/separator';
+import Image from 'next/image';
+
+const skills = {
+  technical: [
+    { 
+      category: 'Programming Languages', 
+      items: [
+        { name: 'C++', icon: 'https://placehold.co/48x48.png', hint: 'c++ logo' },
+        { name: 'Python', icon: 'https://placehold.co/48x48.png', hint: 'python logo' },
+        { name: 'Java', icon: 'https://placehold.co/48x48.png', hint: 'java logo' },
+        { name: 'SQL', icon: 'https://placehold.co/48x48.png', hint: 'sql logo' },
+        { name: 'JavaScript', icon: 'https://placehold.co/48x48.png', hint: 'javascript logo' },
+      ]
+    },
+    {
+      category: 'Web Development',
+      items: [
+        { name: 'HTML', icon: 'https://placehold.co/48x48.png', hint: 'html5 logo' },
+        { name: 'CSS', icon: 'https://placehold.co/48x48.png', hint: 'css3 logo' },
+        { name: 'Firebase', icon: 'https://placehold.co/48x48.png', hint: 'firebase logo' },
+        { name: 'Node.js', icon: 'https://placehold.co/48x48.png', hint: 'nodejs logo' },
+        { name: 'React', icon: 'https://placehold.co/48x48.png', hint: 'react logo' },
+      ]
+    },
+    {
+      category: 'Machine Learning and Data Science',
+      items: [
+        { name: 'Model Development', icon: <BrainCircuit className="w-8 h-8 text-primary" /> },
+        { name: 'Data Analysis', icon: <Database className="w-8 h-8 text-primary" /> },
+        { name: 'Data Visualization', icon: <Bot className="w-8 h-8 text-primary" /> },
+      ]
+    },
+    {
+      category: 'Cryptography',
+      items: [
+        { name: 'Encryption', icon: <ShieldCheck className="w-8 h-8 text-primary" /> },
+        { name: 'Network Security', icon: <Server className="w-8 h-8 text-primary" /> },
+        { name: 'Discrete Mathematics', icon: <Component className="w-8 h-8 text-primary" /> },
+        { name: 'Block Chain', icon: <Cpu className="w-8 h-8 text-primary" /> },
+      ]
+    },
+    {
+      category: 'Operating Systems',
+      items: [
+        { name: 'Linux', icon: 'https://placehold.co/48x48.png', hint: 'linux logo' },
+        { name: 'Windows', icon: 'https://placehold.co/48x48.png', hint: 'windows logo' },
+        { name: 'Ubuntu', icon: 'https://placehold.co/48x48.png', hint: 'ubuntu logo' },
+        { name: 'macOS', icon: 'https://placehold.co/48x48.png', hint: 'apple logo' },
+      ]
+    },
+    {
+      category: 'IoT (Internet of Things)',
+      items: [
+        { name: 'Arduino', icon: 'https://placehold.co/48x48.png', hint: 'arduino logo' },
+        { name: 'ESP', icon: 'https://placehold.co/48x48.png', hint: 'esp32 logo' },
+        { name: 'PCB designs', icon: <CircuitBoard className="w-8 h-8 text-primary" /> },
+        { name: 'Sensors', icon: <Component className="w-8 h-8 text-primary" /> },
+      ]
+    }
+  ],
+  soft: [
+    { name: 'Leadership', icon: <Handshake className="w-8 h-8 text-primary" /> },
+    { name: 'Teamwork', icon: <Users className="w-8 h-8 text-primary" /> },
+    { name: 'Communication', icon: <MessageSquare className="w-8 h-8 text-primary" /> },
+    { name: 'Public Speaking', icon: <Mic className="w-8 h-8 text-primary" /> },
+    { name: 'Problem-Solving', icon: <Lightbulb className="w-8 h-8 text-primary" /> },
+    { name: 'Project Management', icon: <Projector className="w-8 h-8 text-primary" /> },
+  ]
+};
 
 const ResumeSection = () => {
   return (
@@ -58,12 +127,34 @@ const ResumeSection = () => {
         <Separator />
         
         <div>
-            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Star className="w-6 h-6 text-primary" /> Technical Skills</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-                <p><strong>Programming languages:</strong></p><p>Python, java</p>
-                <p><strong>Database System:</strong></p><p>MySQL, MongoDB</p>
-                <p><strong>Web Development:</strong></p><p>HTML, CSS, MERN STACK, JavaScript</p>
-                <p><strong>Operating System:</strong></p><p>Windows, Linux</p>
+            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4"><Star className="w-6 h-6 text-primary" /> A. Technical Skills</h2>
+            <div className="space-y-6">
+                {skills.technical.map(skillCategory => (
+                    <div key={skillCategory.category}>
+                        <h3 className="font-semibold text-lg mb-3">i. {skillCategory.category}</h3>
+                        <div className="flex flex-wrap gap-x-8 gap-y-4">
+                            {skillCategory.items.map(item => (
+                                <div key={item.name} className="flex flex-col items-center gap-2 w-20 text-center">
+                                    {typeof item.icon === 'string' ? (
+                                        <Image src={item.icon} alt={item.name} width={48} height={48} data-ai-hint={item.hint} className="w-12 h-12 object-contain"/>
+                                    ) : (
+                                        item.icon
+                                    )}
+                                    <span className="text-sm">{item.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4 mt-8"><Star className="w-6 h-6 text-primary" /> B. Soft Skills</h2>
+             <div className="flex flex-wrap gap-x-8 gap-y-4">
+                {skills.soft.map(item => (
+                    <div key={item.name} className="flex flex-col items-center gap-2 w-24 text-center">
+                        {item.icon}
+                        <span className="text-sm">{item.name}</span>
+                    </div>
+                ))}
             </div>
         </div>
 
