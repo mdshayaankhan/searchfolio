@@ -20,6 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
+        sans: ['Inter', ...fontFamily.sans],
         body: ['Inter', ...fontFamily.sans],
         headline: ['Inter', ...fontFamily.sans],
         code: ['Source Code Pro', ...fontFamily.mono],
@@ -84,3 +85,5 @@ const config = {
 } satisfies Config;
 
 export default config;
+
+    

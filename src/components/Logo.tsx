@@ -8,14 +8,16 @@ const Logo = () => {
     'text-blue-500',
     'text-green-500',
     'text-red-500',
+    'text-yellow-500',
+    'text-blue-500',
   ];
 
-  const name = 'Searchfolio';
+  const name = 'Welcome!';
 
   return (
     <h1
       className={cn(
-        'select-none text-5xl font-headline font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl'
+        'select-none text-7xl font-sans font-normal tracking-tighter sm:text-8xl md:text-9xl'
       )}
       aria-label={name}
     >
@@ -35,3 +37,5 @@ const Logo = () => {
 };
 
 export default Logo;
+
+    

@@ -14,7 +14,7 @@ const HelpSection = ({ onCommandClick }: HelpSectionProps) => {
     <Card className="border-none shadow-none bg-transparent max-w-2xl mx-auto">
       <CardHeader className="flex flex-row items-center gap-4">
         <HelpCircle className="w-8 h-8 text-primary" />
-        <CardTitle className="text-2xl font-headline">Welcome to Searchfolio!</CardTitle>
+        <CardTitle className="text-2xl font-headline">Welcome to My Portfolio!</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-lg text-foreground/80 mb-6">
@@ -55,3 +55,5 @@ const HelpSection = ({ onCommandClick }: HelpSectionProps) => {
 };
 
 export default HelpSection;
+
+    
