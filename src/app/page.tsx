@@ -138,7 +138,9 @@ export default function Home() {
   };
 
   const handlePortfolioSearch = () => {
-    handleCommand('resume');
+    setSearchTerm('Portfolio');
+    setActiveSection(null);
+    setShowResults(true);
   }
   
   const handleFeelingLucky = () => {
