@@ -127,16 +127,6 @@ const ResumeSection = () => {
                 </ul>
             </div>
         </div>
-
-        <div className="text-center pt-8">
-          <Button asChild size="lg">
-            <a href="/resume.pdf" download="MOHAMMED_SHAYAAN_KHAN_Resume.pdf">
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
-            </a>
-          </Button>
-        </div>
-
       </CardContent>
     </Card>
   );

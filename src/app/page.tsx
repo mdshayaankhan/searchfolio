@@ -136,6 +136,10 @@ export default function Home() {
       handleCommand(searchTerm);
     }
   };
+
+  const handlePortfolioSearch = () => {
+    handleCommand('resume');
+  }
   
   const handleFeelingLucky = () => {
     const luckyCommands = ['about', 'projects', 'contact', 'resume'];
@@ -188,7 +192,7 @@ export default function Home() {
               <Button variant="ghost" size="icon" onClick={clearSearch}>
                 <ArrowLeft className="h-5 w-5" />
               </Button>
-              <Logo small />
+              <button onClick={clearSearch}><Logo small /></button>
               <form
                 onSubmit={handleSubmit}
                 className="relative w-full max-w-lg"
@@ -357,7 +361,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="flex justify-center gap-4 mt-8"
                 >
-                  <Button type="submit" variant="secondary" onClick={handleSubmit}>Portfolio Search</Button>
+                  <Button variant="secondary" onClick={handlePortfolioSearch}>Portfolio Search</Button>
                   <Button variant="secondary" onClick={handleFeelingLucky}>I'm Feeling Lucky</Button>
                 </motion.div>
               </motion.div>
