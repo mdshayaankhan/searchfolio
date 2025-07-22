@@ -14,6 +14,9 @@ const Logo = ({ small }: LogoProps) => {
     'text-red-500',
     'text-yellow-500',
     'text-blue-500',
+    'text-green-500',
+    'text-red-500',
+    'text-yellow-500',
   ];
 
   const name = small ? 'Searchfolio' : 'Welcome!';
@@ -30,8 +33,8 @@ const Logo = ({ small }: LogoProps) => {
         <span
           key={index}
           className={cn(
-            small ? 'dark:text-primary-foreground/90' : 'dark:text-primary-foreground/90',
-            !small && colors[index % colors.length]
+            'dark:text-primary-foreground/90',
+            colors[index % colors.length]
           )}
         >
           {char}

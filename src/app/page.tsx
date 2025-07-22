@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, type FormEvent } from 'react';
-import { Search, Mic, Moon, Sun } from 'lucide-react';
+import { Search, Mic, Moon, Sun, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -185,6 +185,9 @@ export default function Home() {
             transition={{ duration: 0.3 }}
             className="sticky top-0 z-10 flex items-center p-4 bg-background/80 backdrop-blur-sm border-b">
             <div className='flex items-center gap-4'>
+              <Button variant="ghost" size="icon" onClick={clearSearch}>
+                <ArrowLeft className="h-5 w-5" />
+              </Button>
               <Logo small />
               <form
                 onSubmit={handleSubmit}
