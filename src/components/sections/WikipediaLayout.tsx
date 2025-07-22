@@ -86,7 +86,7 @@ export const WikipediaLayout = () => {
 
           <div className="flex flex-col lg:flex-row-reverse gap-8">
             {/* Infobox */}
-            <aside className="w-full lg:w-72 border p-2 bg-slate-50 dark:bg-slate-800/50 float-right lg:float-none clear-right lg:clear-none ml-4 lg:ml-0 mb-4 lg:mb-0">
+            <aside className="w-full lg:w-80 border p-2 bg-slate-50 dark:bg-slate-800/50 float-right lg:float-none clear-right lg:clear-none ml-4 lg:ml-0 mb-4 lg:mb-0">
               <div className="text-center font-bold pb-2">MOHAMMED SHAYAAN KHAN</div>
               <div className="text-center text-sm pb-2">CS Student</div>
               <div className="bg-secondary p-2">
