@@ -129,7 +129,7 @@ export const WikipediaLayout = () => {
 
           <div className="flex flex-col lg:flex-row-reverse gap-8">
             {/* Infobox */}
-            <aside className="w-full lg:w-96 border p-2 bg-slate-50 dark:bg-slate-800/50 float-right lg:float-none clear-right lg:clear-none ml-4 lg:ml-0 mb-4 lg:mb-0">
+            <aside className="w-full lg:w-[350px] border p-2 bg-slate-50 dark:bg-slate-800/50 float-right lg:float-none clear-right lg:clear-none ml-4 lg:ml-0 mb-4 lg:mb-0 flex-shrink-0">
               <div className="text-center font-bold pb-2">MOHAMMED SHAYAAN KHAN</div>
               <div className="text-center text-sm pb-2">CS Student</div>
               <div className="bg-secondary p-2">
@@ -148,7 +148,7 @@ export const WikipediaLayout = () => {
                   <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Born</td><td className="py-1 break-words">April 17, 2005</td></tr>
                   <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Place</td><td className="py-1 break-words">Khammam, Telangana, India</td></tr>
                   <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Phone No.</td><td className="py-1 break-words">+91 9059701978</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Email</td><td className="py-1 break-words">khanshayaanmd@gmail.com</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Email</td><td className="py-1 break-all">khanshayaanmd@gmail.com</td></tr>
                   <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Education</td><td className="py-1 break-words">Malla Reddy University</td></tr>
                   <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top">Languages</td><td className="py-1 break-words">English, Telugu, Hindi</td></tr>
                   <tr className="border-b"><td className="py-1 pr-2 font-semibold align-top break-words">Programming</td><td className="py-1 break-words">Python, Java, JS, SQL, MongoDB</td></tr>
@@ -192,24 +192,19 @@ export const WikipediaLayout = () => {
               </table>
 
               <h2 id="skills" className="font-serif text-2xl border-b pb-1 mt-6">Skills <span className="text-sm font-sans text-blue-600">[edit]</span></h2>
-              <div className="space-y-6 not-prose">
-                {skills.technical.map(skillCategory => (
-                    <div key={skillCategory.category}>
-                        <h3 className="font-semibold text-lg mb-3">{skillCategory.category}</h3>
-                        <div className="flex flex-wrap gap-x-8 gap-y-4">
-                            {skillCategory.items.map(item => (
-                                <div key={item.name} className="flex flex-col items-center gap-2 w-24 text-center">
-                                    {typeof item.icon === 'string' ? (
-                                        <Image src={item.icon} alt={item.name} width={48} height={48} data-ai-hint={item.hint} className="w-12 h-12 object-contain"/>
-                                    ) : (
-                                        item.icon
-                                    )}
-                                    <span className="text-sm">{item.name}</span>
-                                </div>
-                            ))}
-                        </div>
+              <div className="not-prose my-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                  {skills.technical.flatMap(cat => cat.items).map(skill => (
+                    <div key={skill.name} className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-card/50 border hover:shadow-md transition-shadow">
+                      {typeof skill.icon === 'string' ? (
+                          <Image src={skill.icon} alt={skill.name} width={48} height={48} data-ai-hint={skill.hint} className="w-12 h-12 object-contain"/>
+                      ) : (
+                          skill.icon
+                      )}
+                      <span className="text-sm font-medium text-center">{skill.name}</span>
                     </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
                <h2 id="projects" className="font-serif text-2xl border-b pb-1 mt-6">Academic Projects <span className="text-sm font-sans text-blue-600">[edit]</span></h2>
