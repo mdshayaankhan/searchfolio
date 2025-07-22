@@ -100,16 +100,16 @@ export const WikipediaLayout = () => {
                 />
                  <p className="text-center text-xs pt-1">Shayaan</p>
               </div>
-              <table className="w-full text-sm mt-2">
+              <table className="w-full text-sm mt-2 table-fixed">
                 <tbody>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Born</td><td className="py-1">April 17, 2005</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Place</td><td className="py-1">Khammam, Telangana, India</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Phone No.</td><td className="py-1">+91 9059701978</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Email</td><td className="py-1">khanshayaanmd@gmail.com</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Education</td><td className="py-1">Malla Reddy University</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Languages</td><td className="py-1">English, Telugu, Hindi</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Programming</td><td className="py-1">Python, Java, JS, SQL, MongoDB</td></tr>
-                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Skills</td><td className="py-1">MERN Stack, Web Dev, Linux</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Born</td><td className="py-1 break-words">April 17, 2005</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Place</td><td className="py-1 break-words">Khammam, Telangana, India</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Phone No.</td><td className="py-1 break-words">+91 9059701978</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Email</td><td className="py-1 break-words">khanshayaanmd@gmail.com</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Education</td><td className="py-1 break-words">Malla Reddy University</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Languages</td><td className="py-1 break-words">English, Telugu, Hindi</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Programming</td><td className="py-1 break-words">Python, Java, JS, SQL, MongoDB</td></tr>
+                  <tr className="border-b"><td className="py-1 pr-2 font-semibold">Skills</td><td className="py-1 break-words">MERN Stack, Web Dev, Linux</td></tr>
                 </tbody>
               </table>
             </aside>
