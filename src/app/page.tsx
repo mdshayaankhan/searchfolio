@@ -324,7 +324,7 @@ export default function Home() {
                       <Search className="h-5 w-5 text-muted-foreground" />
                     </div>
                     <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
-                      <Mic className="h-5 w-5 text-muted-foreground" />
+                      <Mic className="h-5 w-5 text-primary" />
                     </button>
                   </div>
 
