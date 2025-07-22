@@ -1,22 +1,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Phone, Send } from 'lucide-react';
 
 const contactLinks = [
   {
     icon: <Github className="h-6 w-6" />,
     label: 'GitHub',
-    href: 'https://github.com/Firebase',
+    href: 'https://github.com/mdshayaankhan',
   },
   {
     icon: <Linkedin className="h-6 w-6" />,
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/firebase',
+    href: 'https://www.linkedin.com/in/mdshayaankhan',
   },
   {
     icon: <Mail className="h-6 w-6" />,
     label: 'Email',
-    href: 'mailto:hello@example.com',
+    href: 'mailto:khanshayaanmd@gmail.com',
+  },
+  {
+    icon: <Phone className="h-6 w-6" />,
+    label: 'Phone',
+    href: 'tel:+919059701978',
   },
 ];
 

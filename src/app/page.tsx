@@ -7,6 +7,13 @@ import { Input } from '@/components/ui/input';
 import { AnimatePresence, motion } from 'framer-motion';
 import Logo from '@/components/Logo';
 import { commands, commandSuggestions } from './commands';
+import AboutSection from '@/components/sections/About';
+import ProjectsSection from '@/components/sections/Projects';
+import ContactSection from '@/components/sections/Contact';
+import ResumeSection from '@/components/sections/Resume';
+import HelpSection from '@/components/sections/Help';
+import NotFoundSection from '@/components/sections/NotFound';
+import EasterEggSection from '@/components/sections/EasterEgg';
 import SearchResults from '@/components/sections/SearchResults';
 
 type Section =
@@ -85,9 +92,10 @@ export default function Home() {
 
   const handleCommand = useCallback(
     (command: string) => {
+      const lowerCaseCommand = command.toLowerCase().trim();
       setSearchTerm(command);
       setSuggestions([]);
-      const action = commands[command.toLowerCase().trim()];
+      const action = commands[lowerCaseCommand];
 
       if (typeof action === 'string') {
         if (action.startsWith('http')) {
@@ -121,10 +129,12 @@ export default function Home() {
       setActiveSection(null);
     }
   };
-
+  
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setShowResults(true);
+    if (searchTerm) {
+      handleCommand(searchTerm);
+    }
   };
   
   const handleFeelingLucky = () => {
@@ -133,7 +143,29 @@ export default function Home() {
     handleCommand(randomCommand);
   };
 
-  const renderSection = () => <SearchResults query={searchTerm} onCommandClick={handleCommand} />
+  const renderSection = () => {
+    if (showResults && !activeSection) {
+       return <SearchResults query={searchTerm} onCommandClick={handleCommand} />;
+    }
+    switch (activeSection) {
+      case 'about':
+        return <AboutSection />;
+      case 'projects':
+        return <ProjectsSection />;
+      case 'contact':
+        return <ContactSection />;
+      case 'resume':
+        return <ResumeSection />;
+      case 'help':
+        return <HelpSection onCommandClick={handleCommand} />;
+      case 'not-found':
+        return <NotFoundSection invalidCommand={searchTerm} />;
+      case 'easter-egg':
+        return <EasterEggSection command={easterEggCommand} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div
@@ -271,6 +303,11 @@ export default function Home() {
                       type="text"
                       value={searchTerm}
                       onChange={handleInputChange}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          handleSubmit(e);
+                        }
+                      }}
                       placeholder="Click Search to know more"
                       className="h-12 w-full rounded-full bg-card py-2 pl-12 pr-12 text-base shadow-md hover:shadow-lg focus:shadow-lg transition-shadow duration-300"
                       aria-label="Search portfolio"
@@ -329,7 +366,7 @@ export default function Home() {
           <div className="mt-8 w-full max-w-4xl flex-grow">
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeSection}
+                key={activeSection || 'search-results'}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}

@@ -6,11 +6,11 @@ const AboutSection = () => {
     <Card className="border-none shadow-none bg-transparent">
       <CardHeader className="flex flex-row items-center gap-4">
         <User className="w-8 h-8 text-primary" />
-        <CardTitle className="text-2xl font-headline">About Me</CardTitle>
+        <CardTitle className="text-2xl font-headline">Career Objective</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-lg text-foreground/80 leading-relaxed">
-          I'm a passionate developer with a love for building creative and intuitive web applications. With a foundation in modern frontend technologies like React and Next.js, I specialize in turning complex problems into elegant, user-friendly solutions. I'm always eager to learn new things and collaborate with like-minded people to create something amazing.
+          I am passionate about exploring emerging technologies and aim to join an innovative organization where I can enhance my knowledge, tackle challenging projects, and contribute meaningfully to organizational success. I am eager to leverage my technical skills, problem-solving abilities, and creative mindset to develop solutions that drive efficiency and innovation.
         </p>
       </CardContent>
     </Card>

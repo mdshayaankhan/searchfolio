@@ -5,36 +5,28 @@ import { Code, ExternalLink, Briefcase } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Project Alpha',
-    description: 'A cutting-edge e-commerce platform built with Next.js, featuring real-time inventory and a seamless checkout experience.',
+    title: 'Employee Burnout Analysis',
+    description: 'Developed a predictive model using linear regression to analyse factors contributing to employee burnout. Conducted exploratory data analysis, data cleaning, and feature engineering.',
     image: 'https://placehold.co/600x400.png',
-    liveUrl: '#',
-    githubUrl: '#',
-    hint: 'e-commerce platform'
+    liveUrl: 'https://github.com/mdshayaankhan/Employee-Burnout-Analysis',
+    githubUrl: 'https://github.com/mdshayaankhan/Employee-Burnout-Analysis',
+    hint: 'data analysis'
   },
   {
-    title: 'Project Beta',
-    description: 'An interactive data visualization dashboard for tracking market trends, powered by D3.js and React.',
+    title: 'Power BI Driven Analysis of Indian Agriculture',
+    description: 'Created interactive dashboards to analyse 19 years of agricultural data across crops, seasons, and regions. Provided actionable insights for policymakers.',
     image: 'https://placehold.co/600x400.png',
-    liveUrl: '#',
-    githubUrl: '#',
-    hint: 'data dashboard'
+    liveUrl: 'https://github.com/mdshayaankhan/Agricultural-Analysis',
+    githubUrl: 'https://github.com/mdshayaankhan/Agricultural-Analysis',
+    hint: 'power bi dashboard'
   },
   {
-    title: 'Project Gamma',
-    description: 'A collaborative project management tool designed to streamline team workflows with an intuitive drag-and-drop interface.',
+    title: 'Pet Adoption Web Application',
+    description: 'Developed a MERN stack web app to connect rescue pets with adopters, featuring a secure user interface and real-time updates.',
     image: 'https://placehold.co/600x400.png',
-    liveUrl: '#',
-    githubUrl: '#',
-    hint: 'management tool'
-  },
-   {
-    title: 'Project Delta',
-    description: 'A social media application for sharing photos and connecting with friends, featuring a robust API and a scalable architecture.',
-    image: 'https://placehold.co/600x400.png',
-    liveUrl: '#',
-    githubUrl: '#',
-    hint: 'social media'
+    liveUrl: 'https://github.com/mdshayaankhan/PetAdoption',
+    githubUrl: 'https://github.com/mdshayaankhan/PetAdoption',
+    hint: 'web application'
   },
 ];
 

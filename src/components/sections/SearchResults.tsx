@@ -16,35 +16,35 @@ import {
 
 const searchResults = [
   {
-    title: 'About Me!',
-    url: 'https://en.wikipedia.org/wiki/P_Praneeth_Reddy',
-    displayUrl: 'https://en.wikipedia.org/wiki/P_Praneeth_Reddy',
+    title: 'About Me',
+    url: '#',
+    displayUrl: 'shayaan.dev/about',
     description:
-      "I'm a Computer Science student with a passion for learning new technologies and solving challenging problems. When I'm not coding, you can find me exploring the latest trends in tech, contributing to open source, or playing with my cat...",
+      "Passionate about exploring emerging technologies and aim to join an innovative organization where I can enhance my knowledge, tackle challenging projects, and contribute meaningfully to organizational success.",
     command: 'about',
   },
   {
     title: 'Projects',
-    url: 'https://en.wikipedia.org/wiki/Projects',
-    displayUrl: 'https://en.wikipedia.org/wiki/Projects',
+    url: '#',
+    displayUrl: 'shayaan.dev/projects',
     description:
-      'I have worked on various projects in web development, networking, IoT, databases, machine learning, and AI. These include a real-time weather app using React and Node.js, a housing price prediction model with Python, and smart home IoT solutions...',
+      'Explore my projects, including a predictive model for employee burnout, an agricultural analysis dashboard with Power BI, and a full-stack pet adoption web application using the MERN stack.',
     command: 'projects',
   },
   {
     title: 'Contact',
-    url: 'https://en.wikipedia.org/wiki/Contact',
-    displayUrl: 'https://en.wikipedia.org/wiki/Contact',
+    url: '#',
+    displayUrl: 'shayaan.dev/contact',
     description:
-      "I'm always open to connecting with new people. Feel free to reach out to me through any of the platforms below. Whether you have a question, a project idea, or just want to say hi, I'd love to hear from you.",
+      "I'm always open to connecting with new people. Feel free to reach out to me through LinkedIn, email, or phone. Let's build something amazing together.",
     command: 'contact',
   },
   {
     title: 'Resume',
-    url: 'https://en.wikipedia.org/wiki/Resume',
-    displayUrl: 'https://en.wikipedia.org/wiki/Resume',
+    url: '#',
+    displayUrl: 'shayaan.dev/resume',
     description:
-      'My resume provides a detailed overview of my skills, experience, and educational background. It includes information about my projects, publications, and certifications. Download it to learn more about my qualifications.',
+      'My resume provides a detailed overview of my skills, experience, and educational background. It includes information about my projects, certifications, and achievements. Download it to learn more.',
     command: 'resume',
   },
 ];
@@ -61,7 +61,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
     <div className="flex flex-col lg:flex-row gap-8">
       <div className="flex-1">
         <div className="text-sm text-muted-foreground mb-4">
-          About 6,969,000 results (0.32 seconds)
+          About 4 results (0.42 seconds)
         </div>
 
         <div className="flex items-center gap-6 border-b mb-6">
@@ -88,11 +88,11 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
           </div>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {searchResults.map((result) => (
             <div key={result.title}>
               <button
-                className="group"
+                className="group text-left"
                 onClick={() => onCommandClick(result.command)}
               >
                 <div className="text-sm text-foreground/80">
@@ -113,19 +113,19 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
           <Image
             src="https://placehold.co/600x400.png"
             data-ai-hint="professional headshot"
-            alt="P Praneeth Reddy"
+            alt="MOHAMMED SHAYAAN KHAN"
             width={600}
             height={400}
             className="w-full object-cover"
           />
           <CardContent className="p-4">
-            <h3 className="text-2xl font-bold">P Praneeth Reddy</h3>
+            <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
             <p className="text-sm text-muted-foreground">
-              CS Student at Amrita Vishwa Vidyapeetham
+              CS Student at Malla Reddy university
             </p>
             <Separator className="my-3" />
             <p className="text-sm text-foreground/80 leading-relaxed">
-              Hello, I'm Praneeth, a final-year student majoring in Computer
+              Hello, I'm Shayaan, a final-year student majoring in Computer
               Science and Engineering (CSE). I have a deep passion for coding
               and a strong curiosity for learning new things, especially in the
               realm of technology and understanding how it all works.
@@ -133,21 +133,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
             <div className="flex justify-center gap-2 my-4">
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://linkedin.com/company/firebase"
+                  href="https://www.linkedin.com/in/mdshayaankhan"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -156,7 +142,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://github.com/Firebase"
+                  href="https://github.com/mdshayaankhan"
                   target="_blank"
                   rel="noreferrer"
                 >
