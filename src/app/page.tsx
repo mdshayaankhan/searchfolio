@@ -198,7 +198,7 @@ export default function Home() {
               <button onClick={clearSearch}><Logo small /></button>
               <form
                 onSubmit={handleSubmit}
-                className="relative w-full max-w-2xl"
+                className="relative w-full max-w-3xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
@@ -208,18 +208,18 @@ export default function Home() {
                     value={searchTerm}
                     onChange={handleInputChange}
                     placeholder="Search"
-                    className="h-11 w-full rounded-full bg-card py-2 pl-4 pr-24 text-base shadow-md hover:shadow-lg focus:shadow-lg transition-shadow duration-300"
+                    className="h-12 w-full rounded-full bg-card py-2 pl-4 pr-32 text-base shadow-md hover:shadow-lg focus:shadow-lg transition-shadow duration-300"
                     aria-label="Search portfolio"
                   />
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
                     <button type="button" className="text-muted-foreground hover:text-foreground">
-                      <Mic className="h-5 w-5" />
+                      <Mic className="h-6 w-6" />
                     </button>
                     <button type="button" className="text-muted-foreground hover:text-foreground">
-                      <Camera className="h-5 w-5" />
+                      <Camera className="h-6 w-6" />
                     </button>
                     <button type="submit">
-                      <Search className="h-5 w-5 text-primary" />
+                      <Search className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                     </button>
                   </div>
                 </div>
