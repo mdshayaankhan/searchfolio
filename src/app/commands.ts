@@ -5,6 +5,7 @@ export const commands: Record<string, string> = {
   resume: 'resume',
   cv: 'resume',
   help: 'help',
+  skills: 'resume',
   clear: 'help',
   github: 'https://github.com/mdshayaankhan',
   linkedin: 'https://www.linkedin.com/in/mdshayaankhan',
