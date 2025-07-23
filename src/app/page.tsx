@@ -198,7 +198,7 @@ export default function Home() {
               <button onClick={clearSearch}><Logo small /></button>
               <form
                 onSubmit={handleSubmit}
-                className="relative w-full max-w-4xl"
+                className="relative w-full max-w-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
