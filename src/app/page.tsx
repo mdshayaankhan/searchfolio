@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, type FormEvent } from 'react';
-import { Search, Moon, Sun, ArrowLeft, Mic, Camera } from 'lucide-react';
+import { Search, Moon, Sun, ArrowLeft, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -15,7 +15,7 @@ import HelpSection from '@/components/sections/Help';
 import NotFoundSection from '@/components/sections/NotFound';
 import EasterEggSection from '@/components/sections/EasterEgg';
 import SearchResults from '@/components/sections/SearchResults';
-import { ColorfulMicIcon } from '@/components/icons/ColorfulMicIcon';
+import { ColorfulLensIcon } from '@/components/icons/ColorfulLensIcon';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 type Section =
@@ -216,7 +216,7 @@ export default function Home() {
                       <Mic className="h-6 w-6" />
                     </button>
                     <button type="button" className="hover:text-foreground">
-                      <Camera className="h-6 w-6" />
+                       <ColorfulLensIcon className="h-6 w-6" />
                     </button>
                     <button type="submit">
                       <Search className="h-6 w-6 hover:text-foreground" />
