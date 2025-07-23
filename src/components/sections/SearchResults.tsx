@@ -110,7 +110,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
         <div className="text-sm text-muted-foreground mb-4">
             About 5 results (0.42 seconds)
         </div>
-        <div className="flex flex-col lg:flex-row w-full gap-12">
+        <div className="flex flex-col-reverse lg:flex-row w-full gap-12">
             <div className="w-full lg:w-[60%]">
                 <div className="space-y-8">
                     {searchResults.map((result) => (
