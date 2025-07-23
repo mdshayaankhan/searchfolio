@@ -59,13 +59,9 @@ interface SearchResultsProps {
 
 const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
   return (
-    <div className="flex flex-col lg:flex-row">
-      <div className="flex-1 lg:pr-16">
-        <div className="text-sm text-muted-foreground mb-4">
-          About 4 results (0.42 seconds)
-        </div>
-
-        <div className="flex items-center gap-6 border-b mb-6">
+    <div className="w-full">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-6 border-b mb-6 pl-0 sm:pl-[160px]">
+        <div className="flex items-center gap-6 -mb-px">
           {tabs.map((tab, i) => (
             <button
               key={tab}
@@ -78,92 +74,99 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
               {tab}
             </button>
           ))}
-          <div className="flex-1" />
-          <div className="hidden sm:flex items-center gap-4 text-sm">
-            <button className="text-muted-foreground hover:text-foreground">
-              Settings
-            </button>
-            <button className="text-muted-foreground hover:text-foreground">
-              Tools
-            </button>
+        </div>
+        <div className="flex-1" />
+        <div className="hidden sm:flex items-center gap-4 text-sm pb-2">
+          <button className="text-muted-foreground hover:text-foreground">
+            Settings
+          </button>
+          <button className="text-muted-foreground hover:text-foreground">
+            Tools
+          </button>
+        </div>
+      </div>
+      
+      <div className="grid grid-cols-12 gap-8 pl-0 sm:pl-[160px]">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="text-sm text-muted-foreground mb-4">
+            About 4 results (0.42 seconds)
+          </div>
+          <div className="space-y-8">
+            {searchResults.map((result) => (
+              <div key={result.title}>
+                <button
+                  className="group text-left"
+                  onClick={() => onCommandClick(result.command)}
+                >
+                  <div className="text-sm text-foreground/80">
+                    {result.displayUrl}
+                  </div>
+                  <h3 className="g-title">
+                    {result.title}
+                  </h3>
+                </button>
+                <p className="g-link mt-1">{result.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="space-y-8">
-          {searchResults.map((result) => (
-            <div key={result.title}>
-              <button
-                className="group text-left"
-                onClick={() => onCommandClick(result.command)}
-              >
-                <div className="text-sm text-foreground/80">
-                  {result.displayUrl}
-                </div>
-                <h3 className="text-xl text-blue-700 dark:text-blue-400 group-hover:underline">
-                  {result.title}
-                </h3>
-              </button>
-              <p className="text-foreground/90 mt-1">{result.description}</p>
-            </div>
-          ))}
-        </div>
+        <aside className="col-span-12 lg:col-span-5 w-full">
+          <Card className="rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/portfolio profile 2.jpg"
+              data-ai-hint="professional headshot"
+              alt="MOHAMMED SHAYAAN KHAN"
+              width={600}
+              height={400}
+              className="w-full object-cover"
+            />
+            <CardContent className="p-4">
+              <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
+              <p className="text-sm text-muted-foreground">
+                Computer Science Student at Malla Reddy university
+              </p>
+              <Separator className="my-3" />
+              <p className="text-sm text-foreground/80 leading-relaxed">
+                Hello, I'm Shayaan, a final-year student majoring in Computer
+                Science and Engineering (CSE). I have a deep passion for coding
+                and a strong curiosity for learning new things, especially in the
+                realm of technology and understanding how it all works.
+              </p>
+              <div className="flex justify-center gap-2 my-4">
+                <Button variant="ghost" size="icon" asChild>
+                  <a
+                    href="https://www.linkedin.com/in/mdshayaankhan"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild>
+                  <a
+                    href="https://github.com/mdshayaankhan"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => onCommandClick('resume')}
+                >
+                  Resume
+                </Button>
+                <Button className="w-full" onClick={() => onCommandClick('contact')}>Connect</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </aside>
       </div>
-
-      <aside className="w-full lg:w-[350px] xl:w-[400px] mt-8 lg:mt-0">
-        <Card className="rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src="/images/portfolio profile 2.jpg"
-            data-ai-hint="professional headshot"
-            alt="MOHAMMED SHAYAAN KHAN"
-            width={600}
-            height={400}
-            className="w-full object-cover"
-          />
-          <CardContent className="p-4">
-            <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
-            <p className="text-sm text-muted-foreground">
-              Computer Science Student at Malla Reddy university
-            </p>
-            <Separator className="my-3" />
-            <p className="text-sm text-foreground/80 leading-relaxed">
-              Hello, I'm Shayaan, a final-year student majoring in Computer
-              Science and Engineering (CSE). I have a deep passion for coding
-              and a strong curiosity for learning new things, especially in the
-              realm of technology and understanding how it all works.
-            </p>
-            <div className="flex justify-center gap-2 my-4">
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://www.linkedin.com/in/mdshayaankhan"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://github.com/mdshayaankhan"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
-            </div>
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={() => onCommandClick('resume')}
-              >
-                Resume
-              </Button>
-              <Button className="w-full" onClick={() => onCommandClick('contact')}>Connect</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </aside>
     </div>
   );
 };

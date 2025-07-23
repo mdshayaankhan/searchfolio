@@ -190,15 +190,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="sticky top-0 z-10 flex w-full items-center p-4 bg-background/80 backdrop-blur-sm border-b">
-            <div className='flex items-center gap-4 flex-1'>
-              <Button variant="ghost" size="icon" onClick={clearSearch}>
-                <ArrowLeft className="h-5 w-5" />
-              </Button>
-              <button onClick={clearSearch}><Logo small /></button>
+            className="sticky top-0 z-10 w-full bg-background/80 backdrop-blur-sm border-b">
+            <div className='flex items-center gap-4 p-4'>
+              <button onClick={clearSearch} className='hidden sm:block'><Logo small /></button>
               <form
                 onSubmit={handleSubmit}
-                className="relative w-full max-w-2xl"
+                className="relative w-full max-w-2xl mx-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
@@ -211,49 +208,49 @@ export default function Home() {
                     className="h-12 w-full rounded-full bg-card py-2 pl-4 pr-32 text-base shadow-md hover:shadow-lg focus:shadow-lg transition-shadow duration-300"
                     aria-label="Search portfolio"
                   />
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
-                    <button type="button" className="text-muted-foreground hover:text-foreground">
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3 text-muted-foreground">
+                    <button type="button" className="hover:text-foreground">
                       <Mic className="h-6 w-6" />
                     </button>
-                    <button type="button" className="text-muted-foreground hover:text-foreground">
+                    <button type="button" className="hover:text-foreground">
                       <Camera className="h-6 w-6" />
                     </button>
                     <button type="submit">
-                      <Search className="h-6 w-6 text-muted-foreground hover:text-foreground" />
+                      <Search className="h-6 w-6 hover:text-foreground" />
                     </button>
                   </div>
                 </div>
               </form>
-            </div>
             
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
-                <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
-                    key={isDarkMode ? 'moon' : 'sun'}
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 20, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {isDarkMode ? (
-                      <Moon className="h-5 w-5" />
-                    ) : (
-                      <Sun className="h-5 w-5" />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-                <span className="sr-only">Toggle theme</span>
-              </Button>
-              <Button variant="ghost" size="icon" className="h-9 w-9 hidden sm:flex">
-                <svg focusable="false" viewBox="0 0 24 24" className='h-5 w-5'><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
-                <span className="sr-only">Google apps</span>
-              </Button>
-               <Avatar className="h-8 w-8">
-                  <AvatarFallback className="bg-primary text-primary-foreground">
-                    SK
-                  </AvatarFallback>
-                </Avatar>
+              <div className="flex items-center gap-2">
+                <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={isDarkMode ? 'moon' : 'sun'}
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 20, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {isDarkMode ? (
+                        <Moon className="h-5 w-5" />
+                      ) : (
+                        <Sun className="h-5 w-5" />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+                <Button variant="ghost" size="icon" className="h-9 w-9 hidden sm:flex">
+                  <svg focusable="false" viewBox="0 0 24 24" className='h-5 w-5'><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
+                  <span className="sr-only">Google apps</span>
+                </Button>
+                 <Avatar className="h-8 w-8">
+                    <AvatarFallback className="bg-primary text-primary-foreground">
+                      SK
+                    </AvatarFallback>
+                  </Avatar>
+              </div>
             </div>
           </motion.header>
         ) : (
@@ -284,7 +281,11 @@ export default function Home() {
                 <svg focusable="false" viewBox="0 0 24 24" className='h-5 w-5'><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
                 <span className="sr-only">Google apps</span>
               </Button>
-              <Button>Sign in</Button>
+               <Avatar className="h-8 w-8">
+                  <AvatarFallback className="bg-primary text-primary-foreground">
+                    SK
+                  </AvatarFallback>
+                </Avatar>
             </div>
           </header>
         )}
@@ -383,7 +384,7 @@ export default function Home() {
         </motion.div>
 
         {showResults && (
-          <div className="mt-8 w-full max-w-7xl flex-grow">
+          <div className="w-full max-w-7xl flex-grow">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSection || 'search-results'}
