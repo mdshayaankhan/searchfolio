@@ -106,8 +106,66 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
         </div>
       </div>
       
-      <div className="flex flex-col w-full pl-0 sm:pl-[160px] gap-12">
-        <aside className="w-full lg:max-w-4xl">
+      <div className="flex flex-col-reverse lg:flex-row w-full pl-0 sm:pl-[160px] gap-12">
+        <div className="w-full lg:max-w-xl">
+          <div className="text-sm text-muted-foreground mb-4">
+            About 5 results (0.42 seconds)
+          </div>
+          <div className="space-y-8">
+            {searchResults.map((result) => (
+              <div key={result.title}>
+                <button
+                  className="group text-left"
+                  onClick={() => onCommandClick(result.command)}
+                >
+                  <div className="text-sm text-foreground/80">
+                    {result.displayUrl}
+                  </div>
+                  <h3 className="g-title">
+                    {result.title}
+                  </h3>
+                </button>
+                <p className="g-link mt-1">{result.description}</p>
+              </div>
+            ))}
+          </div>
+           <div className='mt-16'>
+            <h2 className="text-xl mb-4">Searches related to how to connect with shayaan</h2>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4'>
+                {relatedSearches.map(item => (
+                    <a href={item.href} key={item.link} target='_blank' rel='noopener noreferrer' className="text-sm hover:underline">
+                        {item.text} <span className="text-blue-700 dark:text-blue-400 font-semibold">{item.link}</span>
+                    </a>
+                ))}
+            </div>
+            <div className="flex items-center justify-center gap-4 mt-8">
+                <Button variant="ghost" size="icon" disabled>
+                    <ChevronLeft/>
+                </Button>
+                <div className='flex items-center gap-2'>
+                   <div className="h-6 w-6 rounded-full border-2 border-red-500 flex items-center justify-center text-red-500 font-bold text-xs">1</div>
+                   {Array.from({length: 9}).map((_, i) => (
+                      <div key={i} className="h-6 w-6 rounded-full border-2 border-yellow-500" />
+                   ))}
+                </div>
+                 <Button variant="ghost" size="icon">
+                    <ChevronRight/>
+                </Button>
+            </div>
+             <div className="flex justify-center items-center gap-4 mt-2 text-sm">
+                <Button variant="link" className="text-muted-foreground">Previous</Button>
+                {Array.from({length: 10}).map((_, i) => (
+                   <Button variant="link" key={i} className={i === 0 ? 'text-primary font-bold' : 'text-muted-foreground'}>{i + 1}</Button>
+                ))}
+                <Button variant="link" className="text-muted-foreground">Next</Button>
+            </div>
+          </div>
+          <footer className="mt-8 pt-4 border-t text-sm text-muted-foreground text-center">
+            Bengaluru, India - © Shayaan 2024, All rights reserved.
+          </footer>
+        </div>
+
+        <aside className="w-full lg:w-80 xl:w-96">
           <Card className="rounded-xl overflow-hidden shadow-lg">
              <div className="flex flex-col md:flex-row">
               <div className="md:w-1/3">
@@ -168,64 +226,6 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
             </div>
           </Card>
         </aside>
-
-        <div className="w-full lg:max-w-xl">
-          <div className="text-sm text-muted-foreground mb-4">
-            About 5 results (0.42 seconds)
-          </div>
-          <div className="space-y-8">
-            {searchResults.map((result) => (
-              <div key={result.title}>
-                <button
-                  className="group text-left"
-                  onClick={() => onCommandClick(result.command)}
-                >
-                  <div className="text-sm text-foreground/80">
-                    {result.displayUrl}
-                  </div>
-                  <h3 className="g-title">
-                    {result.title}
-                  </h3>
-                </button>
-                <p className="g-link mt-1">{result.description}</p>
-              </div>
-            ))}
-          </div>
-           <div className='mt-16'>
-            <h2 className="text-xl mb-4">Searches related to how to connect with shayaan</h2>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4'>
-                {relatedSearches.map(item => (
-                    <a href={item.href} key={item.link} target='_blank' rel='noopener noreferrer' className="text-sm hover:underline">
-                        {item.text} <span className="text-blue-700 dark:text-blue-400 font-semibold">{item.link}</span>
-                    </a>
-                ))}
-            </div>
-            <div className="flex items-center justify-center gap-4 mt-8">
-                <Button variant="ghost" size="icon" disabled>
-                    <ChevronLeft/>
-                </Button>
-                <div className='flex items-center gap-2'>
-                   <div className="h-6 w-6 rounded-full border-2 border-red-500 flex items-center justify-center text-red-500 font-bold text-xs">1</div>
-                   {Array.from({length: 9}).map((_, i) => (
-                      <div key={i} className="h-6 w-6 rounded-full border-2 border-yellow-500" />
-                   ))}
-                </div>
-                 <Button variant="ghost" size="icon">
-                    <ChevronRight/>
-                </Button>
-            </div>
-             <div className="flex justify-center items-center gap-4 mt-2 text-sm">
-                <Button variant="link" className="text-muted-foreground">Previous</Button>
-                {Array.from({length: 10}).map((_, i) => (
-                   <Button variant="link" key={i} className={i === 0 ? 'text-primary font-bold' : 'text-muted-foreground'}>{i + 1}</Button>
-                ))}
-                <Button variant="link" className="text-muted-foreground">Next</Button>
-            </div>
-          </div>
-          <footer className="mt-8 pt-4 border-t text-sm text-muted-foreground text-center">
-            Bengaluru, India - © Shayaan 2024, All rights reserved.
-          </footer>
-        </div>
       </div>
     </div>
   );
