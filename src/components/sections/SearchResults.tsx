@@ -112,7 +112,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
       <aside className="w-full lg:w-80 xl:w-96">
         <Card className="rounded-xl overflow-hidden shadow-lg">
           <Image
-            src="/images/portfolio profile 2.jpg"
+            src="/images/portfolio%20profile%203.png"
             data-ai-hint="professional headshot"
             alt="MOHAMMED SHAYAAN KHAN"
             width={600}
@@ -122,7 +122,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
           <CardContent className="p-4">
             <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
             <p className="text-sm text-muted-foreground">
-              CS Student at Malla Reddy university
+              Computer Science Student at Malla Reddy university
             </p>
             <Separator className="my-3" />
             <p className="text-sm text-foreground/80 leading-relaxed">
