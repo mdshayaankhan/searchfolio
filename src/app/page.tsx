@@ -290,7 +290,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <main className="flex flex-1 flex-col items-center w-full px-4 pb-20 transition-all duration-500 ease-in-out"
+      <main className={`flex-1 flex-col w-full px-4 pb-20 transition-all duration-500 ease-in-out ${showResults ? 'flex' : 'flex items-center'}`}
         style={{ justifyContent: showResults ? 'flex-start' : 'center' }}
       >
         <motion.div

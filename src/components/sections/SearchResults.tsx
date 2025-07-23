@@ -59,8 +59,8 @@ interface SearchResultsProps {
 
 const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
   return (
-    <div className="flex flex-col lg:flex-row gap-8">
-      <div className="flex-1">
+    <div className="flex flex-col lg:flex-row">
+      <div className="flex-1 lg:pr-16">
         <div className="text-sm text-muted-foreground mb-4">
           About 4 results (0.42 seconds)
         </div>
@@ -79,7 +79,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
             </button>
           ))}
           <div className="flex-1" />
-          <div className="flex items-center gap-4 text-sm">
+          <div className="hidden sm:flex items-center gap-4 text-sm">
             <button className="text-muted-foreground hover:text-foreground">
               Settings
             </button>
@@ -89,7 +89,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {searchResults.map((result) => (
             <div key={result.title}>
               <button
@@ -109,10 +109,10 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
         </div>
       </div>
 
-      <aside className="w-full lg:w-80 xl:w-96">
+      <aside className="w-full lg:w-[350px] xl:w-[400px] mt-8 lg:mt-0">
         <Card className="rounded-xl overflow-hidden shadow-lg">
           <Image
-            src="/images/portfolio%20profile%203.png"
+            src="/images/portfolio profile 2.jpg"
             data-ai-hint="professional headshot"
             alt="MOHAMMED SHAYAAN KHAN"
             width={600}
