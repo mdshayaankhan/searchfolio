@@ -19,7 +19,7 @@ const Logo = ({ small }: LogoProps) => {
     'text-yellow-500',
   ];
 
-  const name = small ? 'Searchfolio' : 'Welcome!';
+  const name = small ? 'Shayaan' : 'Welcome!';
   const sizeClass = small 
     ? 'text-2xl font-sans font-medium tracking-tighter' 
     : 'select-none text-7xl font-sans font-normal tracking-tighter sm:text-8xl md:text-9xl';

@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Searchfolio',
+  title: 'Shayaan',
   description: 'A Google-style developer portfolio.',
 };
 
