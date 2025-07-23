@@ -192,10 +192,13 @@ export default function Home() {
             transition={{ duration: 0.3 }}
             className="sticky top-0 z-10 w-full bg-background/80 backdrop-blur-sm border-b">
             <div className='flex items-center gap-4 p-4'>
+              <button onClick={clearSearch} className='p-2 rounded-full hover:bg-muted hidden sm:block transition-colors'>
+                <ArrowLeft className='h-6 w-6' />
+              </button>
               <button onClick={clearSearch} className='hidden sm:block'><Logo small /></button>
               <form
                 onSubmit={handleSubmit}
-                className="relative w-full max-w-2xl mx-auto"
+                className="relative w-full max-w-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
@@ -222,7 +225,7 @@ export default function Home() {
                 </div>
               </form>
             
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 ml-auto">
                 <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
                   <AnimatePresence mode="wait" initial={false}>
                     <motion.div
@@ -281,11 +284,7 @@ export default function Home() {
                 <svg focusable="false" viewBox="0 0 24 24" className='h-5 w-5'><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
                 <span className="sr-only">Google apps</span>
               </Button>
-               <Avatar className="h-8 w-8">
-                  <AvatarFallback className="bg-primary text-primary-foreground">
-                    SK
-                  </AvatarFallback>
-                </Avatar>
+               <Button>Sign in</Button>
             </div>
           </header>
         )}
