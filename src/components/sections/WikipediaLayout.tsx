@@ -135,7 +135,7 @@ export const WikipediaLayout = () => {
               <div className="text-center text-sm pb-2">CS Student</div>
               <div className="bg-secondary p-2">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/portfolio profile 2.jpg"
                   data-ai-hint="professional headshot"
                   alt="MOHAMMED SHAYAAN KHAN"
                   width={600}

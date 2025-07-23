@@ -112,7 +112,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
       <aside className="w-full lg:w-80 xl:w-96">
         <Card className="rounded-xl overflow-hidden shadow-lg">
           <Image
-            src="/images/profile.jpg"
+            src="/images/portfolio profile 2.jpg"
             data-ai-hint="professional headshot"
             alt="MOHAMMED SHAYAAN KHAN"
             width={600}
