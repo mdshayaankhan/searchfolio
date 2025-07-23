@@ -80,7 +80,7 @@ interface SearchResultsProps {
 const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
   return (
     <div className="w-full">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-6 border-b mb-6 pl-0 sm:pl-[160px]">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-6 border-b mb-6 pl-0 sm:pl-4 md:pl-0 lg:pl-40">
         <div className="flex items-center gap-6 -mb-px">
           {tabs.map((tab, i) => (
             <button
@@ -106,126 +106,128 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
         </div>
       </div>
       
-      <div className="flex flex-col-reverse lg:flex-row w-full pl-0 sm:pl-[160px] gap-12">
-        <div className="w-full lg:max-w-xl">
-          <div className="text-sm text-muted-foreground mb-4">
+      <div className="w-full pl-0 sm:pl-4 md:pl-0 lg:pl-40">
+        <div className="text-sm text-muted-foreground mb-4">
             About 5 results (0.42 seconds)
-          </div>
-          <div className="space-y-8">
-            {searchResults.map((result) => (
-              <div key={result.title}>
-                <button
-                  className="group text-left"
-                  onClick={() => onCommandClick(result.command)}
-                >
-                  <div className="text-sm text-foreground/80">
-                    {result.displayUrl}
-                  </div>
-                  <h3 className="g-title">
-                    {result.title}
-                  </h3>
-                </button>
-                <p className="g-link mt-1">{result.description}</p>
-              </div>
-            ))}
-          </div>
-           <div className='mt-16'>
-            <h2 className="text-xl mb-4">Searches related to how to connect with shayaan</h2>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4'>
-                {relatedSearches.map(item => (
-                    <a href={item.href} key={item.link} target='_blank' rel='noopener noreferrer' className="text-sm hover:underline">
-                        {item.text} <span className="text-blue-700 dark:text-blue-400 font-semibold">{item.link}</span>
-                    </a>
-                ))}
-            </div>
-            <div className="flex items-center justify-center gap-4 mt-8">
-                <Button variant="ghost" size="icon" disabled>
-                    <ChevronLeft/>
-                </Button>
-                <div className='flex items-center gap-2'>
-                   <div className="h-6 w-6 rounded-full border-2 border-red-500 flex items-center justify-center text-red-500 font-bold text-xs">1</div>
-                   {Array.from({length: 9}).map((_, i) => (
-                      <div key={i} className="h-6 w-6 rounded-full border-2 border-yellow-500" />
-                   ))}
-                </div>
-                 <Button variant="ghost" size="icon">
-                    <ChevronRight/>
-                </Button>
-            </div>
-             <div className="flex justify-center items-center gap-4 mt-2 text-sm">
-                <Button variant="link" className="text-muted-foreground">Previous</Button>
-                {Array.from({length: 10}).map((_, i) => (
-                   <Button variant="link" key={i} className={i === 0 ? 'text-primary font-bold' : 'text-muted-foreground'}>{i + 1}</Button>
-                ))}
-                <Button variant="link" className="text-muted-foreground">Next</Button>
-            </div>
-          </div>
-          <footer className="mt-8 pt-4 border-t text-sm text-muted-foreground text-center">
-            Bengaluru, India - © Shayaan 2024, All rights reserved.
-          </footer>
         </div>
-
-        <aside className="w-full lg:w-80 xl:w-96">
-          <Card className="rounded-xl overflow-hidden shadow-lg">
-             <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/3">
-                <Image
-                  src="/images/portfolio profile 2.jpg"
-                  data-ai-hint="professional headshot"
-                  alt="MOHAMMED SHAYAAN KHAN"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="md:w-2/3">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Computer Science Student at Malla Reddy university
-                  </p>
-                  <Separator className="my-3" />
-                  <p className="text-sm text-foreground/80 leading-relaxed mb-4">
-                    Hello, I'm Shayaan, a final-year student majoring in Computer
-                    Science and Engineering (CSE). I have a deep passion for coding
-                    and a strong curiosity for learning new things, especially in the
-                    realm of technology and understanding how it all works.
-                  </p>
-                  <div className="flex justify-start gap-2 mb-4">
-                    <Button variant="ghost" size="icon" asChild>
-                      <a
-                        href="https://www.linkedin.com/in/mdshayaankhan"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" asChild>
-                      <a
-                        href="https://github.com/mdshayaankhan"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Github className="h-5 w-5" />
-                      </a>
-                    </Button>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      className="w-full md:w-auto"
-                      onClick={() => onCommandClick('resume')}
-                    >
-                      Resume
-                    </Button>
-                    <Button className="w-full md:w-auto" onClick={() => onCommandClick('contact')}>Connect</Button>
-                  </div>
-                </CardContent>
-              </div>
+        <div className="flex flex-col lg:flex-row w-full gap-12">
+            <div className="w-full lg:w-[60%]">
+                <div className="space-y-8">
+                    {searchResults.map((result) => (
+                    <div key={result.title}>
+                        <button
+                        className="group text-left"
+                        onClick={() => onCommandClick(result.command)}
+                        >
+                        <div className="text-sm text-foreground/80">
+                            {result.displayUrl}
+                        </div>
+                        <h3 className="g-title">
+                            {result.title}
+                        </h3>
+                        </button>
+                        <p className="g-link mt-1">{result.description}</p>
+                    </div>
+                    ))}
+                </div>
+                <div className='mt-16'>
+                    <h2 className="text-xl mb-4">Searches related to how to connect with shayaan</h2>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4'>
+                        {relatedSearches.map(item => (
+                            <a href={item.href} key={item.link} target='_blank' rel='noopener noreferrer' className="text-sm hover:underline">
+                                {item.text} <span className="text-blue-700 dark:text-blue-400 font-semibold">{item.link}</span>
+                            </a>
+                        ))}
+                    </div>
+                    <div className="flex items-center justify-center gap-4 mt-8">
+                        <Button variant="ghost" size="icon" disabled>
+                            <ChevronLeft/>
+                        </Button>
+                        <div className='flex items-center gap-2'>
+                        <div className="h-6 w-6 rounded-full border-2 border-red-500 flex items-center justify-center text-red-500 font-bold text-xs">1</div>
+                        {Array.from({length: 9}).map((_, i) => (
+                            <div key={i} className="h-6 w-6 rounded-full border-2 border-yellow-500" />
+                        ))}
+                        </div>
+                        <Button variant="ghost" size="icon">
+                            <ChevronRight/>
+                        </Button>
+                    </div>
+                    <div className="flex justify-center items-center gap-4 mt-2 text-sm">
+                        <Button variant="link" className="text-muted-foreground">Previous</Button>
+                        {Array.from({length: 10}).map((_, i) => (
+                        <Button variant="link" key={i} className={i === 0 ? 'text-primary font-bold' : 'text-muted-foreground'}>{i + 1}</Button>
+                        ))}
+                        <Button variant="link" className="text-muted-foreground">Next</Button>
+                    </div>
+                </div>
+                <footer className="mt-8 pt-4 border-t text-sm text-muted-foreground text-center">
+                    Bengaluru, India - © Shayaan 2024, All rights reserved.
+                </footer>
             </div>
-          </Card>
-        </aside>
+
+            <aside className="w-full lg:w-[35%] xl:w-96">
+                <Card className="rounded-xl overflow-hidden shadow-lg">
+                    <div className="flex flex-col">
+                    <div>
+                        <Image
+                        src="/images/portfolio profile 2.jpg"
+                        data-ai-hint="professional headshot"
+                        alt="MOHAMMED SHAYAAN KHAN"
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div>
+                        <CardContent className="p-6">
+                        <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
+                        <p className="text-sm text-muted-foreground">
+                            Computer Science Student at Malla Reddy university
+                        </p>
+                        <Separator className="my-3" />
+                        <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+                            Hello, I'm Shayaan, a final-year student majoring in Computer
+                            Science and Engineering (CSE). I have a deep passion for coding
+                            and a strong curiosity for learning new things, especially in the
+                            realm of technology and understanding how it all works.
+                        </p>
+                        <div className="flex justify-start gap-2 mb-4">
+                            <Button variant="ghost" size="icon" asChild>
+                            <a
+                                href="https://www.linkedin.com/in/mdshayaankhan"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <Linkedin className="h-5 w-5" />
+                            </a>
+                            </Button>
+                            <Button variant="ghost" size="icon" asChild>
+                            <a
+                                href="https://github.com/mdshayaankhan"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <Github className="h-5 w-5" />
+                            </a>
+                            </Button>
+                        </div>
+                        <div className="flex gap-2">
+                            <Button
+                            variant="outline"
+                            className="w-full md:w-auto"
+                            onClick={() => onCommandClick('resume')}
+                            >
+                            Resume
+                            </Button>
+                            <Button className="w-full md:w-auto" onClick={() => onCommandClick('contact')}>Connect</Button>
+                        </div>
+                        </CardContent>
+                    </div>
+                    </div>
+                </Card>
+            </aside>
+        </div>
       </div>
     </div>
   );
