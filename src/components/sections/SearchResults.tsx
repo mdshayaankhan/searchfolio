@@ -106,8 +106,70 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
         </div>
       </div>
       
-      <div className="grid grid-cols-12 gap-x-8 gap-y-12 pl-0 sm:pl-[160px]">
-        <div className="col-span-12 lg:col-span-7">
+      <div className="flex flex-col w-full pl-0 sm:pl-[160px] gap-12">
+        <aside className="w-full lg:max-w-4xl">
+          <Card className="rounded-xl overflow-hidden shadow-lg">
+             <div className="flex flex-col md:flex-row">
+              <div className="md:w-1/3">
+                <Image
+                  src="/images/portfolio profile 2.jpg"
+                  data-ai-hint="professional headshot"
+                  alt="MOHAMMED SHAYAAN KHAN"
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="md:w-2/3">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Computer Science Student at Malla Reddy university
+                  </p>
+                  <Separator className="my-3" />
+                  <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+                    Hello, I'm Shayaan, a final-year student majoring in Computer
+                    Science and Engineering (CSE). I have a deep passion for coding
+                    and a strong curiosity for learning new things, especially in the
+                    realm of technology and understanding how it all works.
+                  </p>
+                  <div className="flex justify-start gap-2 mb-4">
+                    <Button variant="ghost" size="icon" asChild>
+                      <a
+                        href="https://www.linkedin.com/in/mdshayaankhan"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" asChild>
+                      <a
+                        href="https://github.com/mdshayaankhan"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Github className="h-5 w-5" />
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="outline"
+                      className="w-full md:w-auto"
+                      onClick={() => onCommandClick('resume')}
+                    >
+                      Resume
+                    </Button>
+                    <Button className="w-full md:w-auto" onClick={() => onCommandClick('contact')}>Connect</Button>
+                  </div>
+                </CardContent>
+              </div>
+            </div>
+          </Card>
+        </aside>
+
+        <div className="w-full lg:max-w-xl">
           <div className="text-sm text-muted-foreground mb-4">
             About 5 results (0.42 seconds)
           </div>
@@ -131,7 +193,7 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
           </div>
            <div className='mt-16'>
             <h2 className="text-xl mb-4">Searches related to how to connect with shayaan</h2>
-            <div className='grid grid-cols-2 gap-x-8 gap-y-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4'>
                 {relatedSearches.map(item => (
                     <a href={item.href} key={item.link} target='_blank' rel='noopener noreferrer' className="text-sm hover:underline">
                         {item.text} <span className="text-blue-700 dark:text-blue-400 font-semibold">{item.link}</span>
@@ -164,62 +226,6 @@ const SearchResults = ({ query, onCommandClick }: SearchResultsProps) => {
             Bengaluru, India - © Shayaan 2024, All rights reserved.
           </footer>
         </div>
-
-        <aside className="col-span-12 lg:col-span-5 w-full">
-          <Card className="rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src="/images/portfolio profile 2.jpg"
-              data-ai-hint="professional headshot"
-              alt="MOHAMMED SHAYAAN KHAN"
-              width={600}
-              height={400}
-              className="w-full object-cover"
-            />
-            <CardContent className="p-4">
-              <h3 className="text-2xl font-bold">MOHAMMED SHAYAAN KHAN</h3>
-              <p className="text-sm text-muted-foreground">
-                Computer Science Student at Malla Reddy university
-              </p>
-              <Separator className="my-3" />
-              <p className="text-sm text-foreground/80 leading-relaxed">
-                Hello, I'm Shayaan, a final-year student majoring in Computer
-                Science and Engineering (CSE). I have a deep passion for coding
-                and a strong curiosity for learning new things, especially in the
-                realm of technology and understanding how it all works.
-              </p>
-              <div className="flex justify-center gap-2 my-4">
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://www.linkedin.com/in/mdshayaankhan"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://github.com/mdshayaankhan"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
-                </Button>
-              </div>
-              <div className="flex gap-2">
-                <Button
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => onCommandClick('resume')}
-                >
-                  Resume
-                </Button>
-                <Button className="w-full" onClick={() => onCommandClick('contact')}>Connect</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </aside>
       </div>
     </div>
   );
