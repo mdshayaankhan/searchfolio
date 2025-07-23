@@ -190,8 +190,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="sticky top-0 z-10 flex items-center p-4 bg-background/80 backdrop-blur-sm border-b">
-            <div className='flex items-center gap-4'>
+            className="sticky top-0 z-10 flex w-full items-center p-4 bg-background/80 backdrop-blur-sm border-b">
+            <div className='flex items-center gap-4 flex-1'>
               <Button variant="ghost" size="icon" onClick={clearSearch}>
                 <ArrowLeft className="h-5 w-5" />
               </Button>
@@ -225,7 +225,7 @@ export default function Home() {
                 </div>
               </form>
             </div>
-            <div className="flex-1" />
+            
             <div className="flex items-center gap-2">
               <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
                 <AnimatePresence mode="wait" initial={false}>
