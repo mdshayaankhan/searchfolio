@@ -16,6 +16,7 @@ import NotFoundSection from '@/components/sections/NotFound';
 import EasterEggSection from '@/components/sections/EasterEgg';
 import SearchResults from '@/components/sections/SearchResults';
 import { ColorfulMicIcon } from '@/components/icons/ColorfulMicIcon';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 type Section =
   | 'about'
@@ -242,7 +243,11 @@ export default function Home() {
                 <svg focusable="false" viewBox="0 0 24 24" className='h-5 w-5'><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
                 <span className="sr-only">Google apps</span>
               </Button>
-              <Button size="sm" className="hidden sm:inline-flex">Sign in</Button>
+               <Avatar className="h-8 w-8">
+                  <AvatarFallback className="bg-primary text-primary-foreground">
+                    SK
+                  </AvatarFallback>
+                </Avatar>
             </div>
           </motion.header>
         ) : (
